@@ -35,14 +35,14 @@ int main(int argc, char* argv[])
 {
   if (argc != 3)
   {
-    cerr << "Usage: calc_time_diff <end_time> <start_time>\n";
+    cerr << "Usage: calc_time_diff <start_time> <end_time>\n";
     return 1;
   }
 
   try
   {
-    seconds end = parse_time(argv[1]);
-    seconds start = parse_time(argv[2]);
+    seconds start = parse_time(argv[1]);
+    seconds end = parse_time(argv[2]);
     seconds diff = end - start;
     if (diff.count() < 0)
       diff += hours(24); // Wrap around midnight.
